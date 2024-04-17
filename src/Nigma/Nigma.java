@@ -1,8 +1,10 @@
 package Nigma;
 
-public class Nigma {
+public class Nigma
+{
 
-  public static void main(String[] args) throws Exception {
-        new main();
-    }
+  public static void main(String[] args) throws Exception
+  {
+        new main();//конструктор
+  }
 }

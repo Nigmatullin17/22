@@ -5,7 +5,8 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
  
-public class main extends JFrame {
+public class main extends JFrame
+{
 
     //создание переменных
     double x = -5;
@@ -20,17 +21,18 @@ public class main extends JFrame {
     JButton button;
     JLabel error;
  
-    main() {
+    main()
+    {
         //создание окна с настройками и полей ввода
         JayFrame = new JFrame();
         JayFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JayPlane = new JPanel();
         JayFrame.add(JayPlane);
-        //поменять на любой
         JayPlane.setBackground(Color.lightGray);
         JayPlane.setLayout(null);
         button = new JButton("Выполнить");
-        JayFrame.setSize(170, 300);
+        JayFrame.setSize(300, 300);
+        JayFrame.setLocation(900, 150); // Устанавливает позицию окна на экране по координатам (100, 100)
         
 
         //создание надписей и текстовых полей 
@@ -48,9 +50,10 @@ public class main extends JFrame {
 
 
         //задание координат для текстовых полей и кнопок
-      
+        //позиция и размер надписи функции
         func.setLocation(10, 10);
         func.setSize(160, 20);
+        //аоциция а
         Ta.setLocation(40, 40);
         Ty20.setLocation(40, 80);
         Ta.setSize(50, 20);
@@ -59,17 +62,22 @@ public class main extends JFrame {
         Tx2.setLocation(40, 160);
         Tx1.setSize(50, 20);
         Tx2.setSize(50, 20);
-        
-        JayPlane.add(func);
-        JayPlane.add(Ta);
+        // ширина и длина поля ввода
+        Ta.setSize(200, 20);
+        Ty20.setSize(200, 20);
+        Tx1.setSize(200, 20);
+        Tx2.setSize(200, 20);
+
+        // Добавление компонентов на панель JayPlane
+        JayPlane.add(func); // Добавление надписи func
+        JayPlane.add(Ta); // Добавление текстового поля для параметра a
         JayPlane.add(Ty20);
         JayPlane.add(Tx1);
         JayPlane.add(Tx2);
+        La.setLocation(10, 40); // Задание расположения надписи a
+        La.setSize(40, 20); // Задание размеров надписи a
+        JayPlane.add(La); // Добавление надписи a
 
-        La.setLocation(10, 40);
-        La.setSize(40, 20);
-        JayPlane.add(La);
- 
         Ly20.setLocation(10, 80);
         Ly20.setSize(40, 20);
         JayPlane.add(Ly20);
@@ -77,30 +85,30 @@ public class main extends JFrame {
         Lx1.setLocation(10, 120);
         Lx1.setSize(40, 20);
         JayPlane.add(Lx1);
-        
+
         Lx2.setLocation(10, 160);
         Lx2.setSize(40, 20);
         JayPlane.add(Lx2);
 
-        
- 
-        button.setLocation(20, 200);
-        button.setSize(120, 30);
-        JayPlane.add(button);
+        button.setLocation(20, 200); // Задание расположения кнопки button
+        button.setSize(120, 30); // Задание размеров кнопки button
+        JayPlane.add(button); // Добавление кнопки button
 
- 
- 
+// Создание метки для вывода сообщений об ошибках
         error = new JLabel("");
-        error.setLocation(10, 150);
+        error.setLocation(10, 150); // Задание расположения метки error
         error.setSize(330, 20);
-        JayPlane.add(error);
+        JayPlane.add(error); // Добавление метки error
+
+// Отображение окна и запрет изменения его размеров
+        JayFrame.setVisible(true); // Делает окно видимым
+        JayFrame.setResizable(false); // Запрещает изменение размеров окна
  
-        JayFrame.setVisible(true);
-        JayFrame.setResizable(false);
  
- 
-        button.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) { 
+        button.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
                 try{
                     //считывание значений из полей
                     a = Double.valueOf(Ta.getText());
@@ -109,8 +117,10 @@ public class main extends JFrame {
                     xx = Double.valueOf(Tx2.getText());
                     if (x < xx && x >= 0 && xx <= 20) { //ограничения по х
                         if(Math.abs(y20) <= 10){ //ограничение у20
-                            if(Math.abs(a)<=10){
-                                try {
+                            if(a >= -1 && a <= 10)
+                            {
+                                try
+                                {
                                     //создание окна и отрисовка
                                     new Graph(x, xx, y, yy, a, y20);
                                    JOptionPane.showMessageDialog(null, "Все данные верны");
@@ -118,21 +128,25 @@ public class main extends JFrame {
                                     set("Ошибка");
                                     System.out.println(w3);
                                 }
-                            }else{
+                            }else
+                            {
                                
-                                 JOptionPane.showMessageDialog(null, "Некорректное значение а. a = [-5; 5]");
+                                 JOptionPane.showMessageDialog(null, "Некорректное значение а. a = [-1; 10]");
                             }
                             
                         }else{
-                            JOptionPane.showMessageDialog(null, "Некорректное значение y2(0). Введите значения из [-5; 5]");
+
+                            JOptionPane.showMessageDialog(null, "Некорректное значение y2(0). Введите значения из [-10; 10]");
                             
                         }
                         
-                    } else {
+                    } else
+                    {
      JOptionPane.showMessageDialog(null, "Некорректный интервал x. Введите значения из [0; 20] и x2 должно быть больше x1");
 
                     }                 
-                }catch(Exception e1){
+                }catch(Exception e1)
+                {
    JOptionPane.showMessageDialog(null, "Некорректное значения");
 
                 }

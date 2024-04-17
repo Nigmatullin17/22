@@ -12,7 +12,8 @@ import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
  
 
-public class Results extends JPanel {
+public class Results extends JPanel //наследование идет
+{
     int w;
     int h;
     List<Double> Y1;//значения у1
@@ -21,7 +22,8 @@ public class Results extends JPanel {
     int offset = 0;
     JFrame JF;
 
-    public Results(List<Double> x,List<Double> y1, List<Double> y2){
+    public Results(List<Double> x,List<Double> y1, List<Double> y2) //конструктор
+    {
         h = 480;
         w = 350;
         this.Y1 = y1;
@@ -33,7 +35,8 @@ public class Results extends JPanel {
     public void close(){
         JF.dispose();
     }
-    public void frameopt(){
+    public void frameopt()
+    {
         JF = new JFrame("Метод Эйлера");
         JF.setBounds(500, 500, w + 6, h + 28);
         JF.setLayout(null);
@@ -44,9 +47,11 @@ public class Results extends JPanel {
         JF.add(this);
         this.setBackground(Color.lightGray);
 
-        this.addMouseWheelListener(new MouseWheelListener() {
+        this.addMouseWheelListener(new MouseWheelListener()
+        {
             @Override
-            public void mouseWheelMoved(MouseWheelEvent e) {
+            public void mouseWheelMoved(MouseWheelEvent e)
+            {
  
                 int r = e.getWheelRotation();
  
@@ -65,7 +70,8 @@ public class Results extends JPanel {
     }
 
     @Override
-    public void paintComponent(Graphics g) {
+    public void paintComponent(Graphics g)
+    {
         //Отрисовка окна с графиком
         super.paintComponent(g);
 
@@ -80,12 +86,14 @@ public class Results extends JPanel {
     }
 
 
-    public void Paint(Graphics g){
+    public void Paint(Graphics g)
+    {
         Font fnt = new Font("default", Font.ITALIC, 16);
         g.setFont(fnt);
         g.setColor(Color.BLACK);
         g.drawString(String.format("%5s %15s %15s %15s","Индекс","x","y1","y2"),10,50);//вывод названия функции
-        for(int i = this.offset*20, j = 0; i < Y1.size() && i < (this.offset+1)*20; i++,j++){
+        for(int i = this.offset*20, j = 0; i < Y1.size() && i < (this.offset+1)*20; i++,j++)
+        {
             g.drawString(String.format("%5d %15.3f %15.3f %15.3f",i,X.get(i),Y1.get(i),Y2.get(i)), 10, 70+j*20);//вывод названия функции
         }
     }

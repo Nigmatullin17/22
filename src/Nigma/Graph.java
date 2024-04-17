@@ -31,10 +31,34 @@ public class Graph extends JPanel
     Results results;
 
     Eiler fun;
- 
-    
- 
-    Graph(double x1, double x2, double y1, double y2,double a, double y20)
+
+    public void autoScale() {
+        // Получаем минимальное и максимальное значения по осям X и Y
+        double minX = Collections.min(fun.X);
+        double maxX = Collections.max(fun.X);
+        double minY = Math.min(Collections.min(fun.Y1), Collections.min(fun.Y2));
+        double maxY = Math.max(Collections.max(fun.Y1), Collections.max(fun.Y2));
+
+        // Вычисляем диапазон значений по осям X и Y
+        double rangeX = maxX - minX;
+        double rangeY = maxY - minY;
+
+        // Добавляем небольшой отступ к пределам по осям
+        double paddingX = rangeX * 0.1;
+        double paddingY = rangeY * 0.1;
+
+        // Устанавливаем новые пределы по осям X и Y с учетом отступов
+        x1 = minX - paddingX;
+        x2 = maxX + paddingX;
+        y1 = minY - paddingY;
+        y2 = maxY + paddingY;
+
+        // Перерисовываем график с новыми пределами
+        repaint();
+    }
+
+
+    Graph(double x1, double x2, double y1, double y2,double a, double y20) //конструктор
     {
         //задаем переменные
         this.x1 = x1;
@@ -59,6 +83,9 @@ public class Graph extends JPanel
         this.x2 = x2 + 2;
         this.y1 = Math.min(Collections.min(fun.Y1), Collections.min(fun.Y2)) - 2;
         this.y2 = Math.max(Collections.min(fun.Y1), Collections.min(fun.Y2)) + 10;
+        // Автоматическое масштабирование графика
+        autoScale();
+
         frameOp();
  
     }
