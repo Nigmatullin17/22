@@ -5,7 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
  
-public class main extends JFrame
+public class main extends JFrame//вызывает основное окно которое отвечает за окно ввода
 {
 
     //создание переменных
