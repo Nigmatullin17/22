@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Nigmatullin:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Nigmatullin_jar</output-path>
+    <root id="archive" name="Nigmatullin.jar">
+      <element id="module-output" name="Nigmatullin" />
+    </root>
+  </artifact>
+</component>
