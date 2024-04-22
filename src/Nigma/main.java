@@ -31,7 +31,7 @@ public class main extends JFrame//вызывает основное окно к�
         JayPlane.setBackground(Color.lightGray);
         JayPlane.setLayout(null);
         button = new JButton("Выполнить");
-        JayFrame.setSize(300, 300);
+        JayFrame.setSize(320, 300);
         JayFrame.setLocation(900, 150); // Устанавливает позицию окна на экране по координатам (100, 100)
         
 
@@ -42,10 +42,10 @@ public class main extends JFrame//вызывает основное окно к�
         TextField Tx2 = new TextField("10", 40);
      
         JLabel func = new JLabel("F(x,y1,y2)=-axy2-x^2y1");
-        JLabel La = new JLabel("a:");
-        JLabel Ly20 = new JLabel("y2(0):");
-        JLabel Lx1 = new JLabel("x1:");
-        JLabel Lx2 = new JLabel("x2:");
+        JLabel La = new JLabel("a [-1; 10]:");
+        JLabel Ly20 = new JLabel("y2(0) [-10; 10]:");
+        JLabel Lx1 = new JLabel("x1 [0; 20]:");
+        JLabel Lx2 = new JLabel("x2 [0; 20]:");
 
 
 
@@ -54,17 +54,17 @@ public class main extends JFrame//вызывает основное окно к�
         func.setLocation(10, 10);
         func.setSize(160, 20);
         //аоциция а
-        Ta.setLocation(40, 40);
-        Ty20.setLocation(40, 80);
+        Ta.setLocation(70, 40);
+        Ty20.setLocation(90, 80);
         Ta.setSize(50, 20);
-        Ty20.setSize(50, 20);
-        Tx1.setLocation(40, 120);
-        Tx2.setLocation(40, 160);
+        Ty20.setSize(70, 20);
+        Tx1.setLocation(70, 120);
+        Tx2.setLocation(70, 160);
         Tx1.setSize(50, 20);
         Tx2.setSize(50, 20);
         // ширина и длина поля ввода
         Ta.setSize(200, 20);
-        Ty20.setSize(200, 20);
+        Ty20.setSize(180, 20);
         Tx1.setSize(200, 20);
         Tx2.setSize(200, 20);
 
@@ -75,19 +75,19 @@ public class main extends JFrame//вызывает основное окно к�
         JayPlane.add(Tx1);
         JayPlane.add(Tx2);
         La.setLocation(10, 40); // Задание расположения надписи a
-        La.setSize(40, 20); // Задание размеров надписи a
+        La.setSize(70, 20); // Задание размеров надписи a
         JayPlane.add(La); // Добавление надписи a
 
         Ly20.setLocation(10, 80);
-        Ly20.setSize(40, 20);
+        Ly20.setSize(80, 20);
         JayPlane.add(Ly20);
 
         Lx1.setLocation(10, 120);
-        Lx1.setSize(40, 20);
+        Lx1.setSize(70, 20);
         JayPlane.add(Lx1);
 
         Lx2.setLocation(10, 160);
-        Lx2.setSize(40, 20);
+        Lx2.setSize(70, 20);
         JayPlane.add(Lx2);
 
         button.setLocation(20, 200); // Задание расположения кнопки button
