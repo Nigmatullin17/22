@@ -1,10 +1,11 @@
 
 package Nigma;
-
+//подключение библиотек
 import java.util.ArrayList;
 import java.util.List;
-
-public class Eiler {
+//этот класс отвечает за вычисление интеграла методом эйлера
+public class Eiler
+{
     double h = 0.1; // Шаг
     double a = 0; // Параметр 'a'
     List<Double> Y1 = new ArrayList<Double>(); // Значения функции y1
@@ -12,7 +13,8 @@ public class Eiler {
     List<Double> X = new ArrayList<Double>(); // Значения аргумента x
 
     // Конструктор класса
-    Eiler(double a, double y20, double x1, double x2) {
+    Eiler(double a, double y20, double x1, double x2)
+    {
         this.a = a;
         // Начальные значения y1, y2 и x
         Y1.add(0.0); // Начальное значение y1(x1) = 0
@@ -21,7 +23,8 @@ public class Eiler {
 
         int index = 0;
         // Вычисление значений функций методом Эйлера
-        for (double i = x1 + h; i < x2; i += h) {
+        for (double i = x1 + h; i < x2; i += h)
+        {
             Y1.add(Y1.get(index) + h * F(h, Y1.get(index), Y2.get(index)));// Вычисление нового значения y1
             Y2.add(Y2.get(index) + h * Y1.get(index)); // Вычисление нового значения y2
             X.add(i); // Добавление нового значения x

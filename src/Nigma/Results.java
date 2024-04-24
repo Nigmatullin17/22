@@ -1,5 +1,6 @@
 
 package Nigma;
+//подключение библиотек
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -11,8 +12,9 @@ import java.util.List;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
  
-
-public class Results extends JPanel //наследование идет
+//этот класс отвечает за созадание и отрисовку окна с разеультатами вычислений
+public class Results extends JPanel
+//наследование идет
 {
     int w;
     int h;
@@ -58,7 +60,8 @@ public class Results extends JPanel //наследование идет
                 if(r>0){
                     if(X.size()-offset*20 > offset )
                     offset+=1;
-                }else{
+                }else
+                {
                     if(offset>0)
                         offset-=1;
                 }

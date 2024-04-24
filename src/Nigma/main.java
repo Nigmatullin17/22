@@ -1,11 +1,12 @@
 
 package Nigma;
-
+//поделючение библиотек
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
- 
-public class main extends JFrame//вызывает основное окно которое отвечает за окно ввода
+ //этот класс отвечает за создание окна ввода и считыванеи из них данных
+public class main extends JFrame
+//вызывает основное окно которое отвечает за окно ввода
 {
 
     //создание переменных
@@ -109,14 +110,17 @@ public class main extends JFrame//вызывает основное окно к�
         {
             public void actionPerformed(ActionEvent e)
             {
-                try{
+                try
+                {
                     //считывание значений из полей
                     a = Double.valueOf(Ta.getText());
                     y20 = Double.valueOf(Ty20.getText());
                     x = Double.valueOf(Tx1.getText());
                     xx = Double.valueOf(Tx2.getText());
-                    if (x < xx && x >= 0 && xx <= 20) { //ограничения по х
-                        if(Math.abs(y20) <= 10){ //ограничение у20
+                    if (x < xx && x >= 0 && xx <= 20)
+                    { //ограничения по х
+                        if(Math.abs(y20) <= 10)
+                        { //ограничение у20
                             if(a >= -1 && a <= 10)
                             {
                                 try
@@ -124,7 +128,8 @@ public class main extends JFrame//вызывает основное окно к�
                                     //создание окна и отрисовка
                                     new Graph(x, xx, y, yy, a, y20);
                                    JOptionPane.showMessageDialog(null, "Все данные верны");
-                                } catch (Exception w3) {
+                                } catch (Exception w3)
+                                {
                                     set("Ошибка");
                                     System.out.println(w3);
                                 }
