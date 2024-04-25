@@ -16,6 +16,7 @@ public class main extends JFrame
     double yy = 5;
     double a = 0;
     double y20 = 0;
+    int counterOfDumb = 0;
     //создание окна
     JFrame JayFrame;
     JPanel JayPlane;
@@ -97,7 +98,7 @@ public class main extends JFrame
 
 // Создание метки для вывода сообщений об ошибках
         error = new JLabel("");
-        error.setLocation(10, 150); // Задание расположения метки error
+        error.setLocation(10, 220); // Задание расположения метки error
         error.setSize(330, 20);
         JayPlane.add(error); // Добавление метки error
 
@@ -130,30 +131,39 @@ public class main extends JFrame
                                    JOptionPane.showMessageDialog(null, "Все данные верны");
                                 } catch (Exception w3)
                                 {
+                                    counterOfDumb++;
                                     set("Ошибка");
                                     System.out.println(w3);
                                 }
                             }else
                             {
-                               
+                                counterOfDumb++;
                                  JOptionPane.showMessageDialog(null, "Некорректное значение а. a = [-1; 10]");
                             }
                             
                         }else{
 
+                            counterOfDumb++;
                             JOptionPane.showMessageDialog(null, "Некорректное значение y2(0). Введите значения из [-10; 10]");
                             
                         }
                         
                     } else
                     {
-     JOptionPane.showMessageDialog(null, "Некорректный интервал x. Введите значения из [0; 20] и x2 должно быть больше x1");
+                        counterOfDumb++;
+                        JOptionPane.showMessageDialog(null, "Некорректный интервал x. Введите значения из [0; 20] и x2 должно быть больше x1");
 
                     }                 
                 }catch(Exception e1)
                 {
-   JOptionPane.showMessageDialog(null, "Некорректное значения");
+                    counterOfDumb++;
+                    JOptionPane.showMessageDialog(null, "Некорректное значения");
 
+                }
+                if (counterOfDumb > 5)
+                {
+                    set("Попробуйте в следующий раз");
+                    button.setVisible(false);
                 }
             }
         });

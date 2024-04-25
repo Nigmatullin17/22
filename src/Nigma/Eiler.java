@@ -35,7 +35,7 @@ public class Eiler
     // Метод для вычисления значения функции F(x, y1, y2)
     private double F(double x, double y1, double y2)
     {
-        return (-a * x * y2 - Math.pow(x, 2) * y1);
+        return (-a * x * y2 - Math.pow(x, 2) * Math.abs(y1));
     }
 }
 

@@ -97,7 +97,8 @@ public class Results extends JPanel
         g.drawString(String.format("%5s %15s %15s %15s","Индекс","x","y1","y2"),10,50);//вывод названия функции
         for(int i = this.offset*20, j = 0; i < Y1.size() && i < (this.offset+1)*20; i++,j++)
         {
-            g.drawString(String.format("%5d %15.3f %15.3f %15.3f",i,X.get(i),Y1.get(i),Y2.get(i)), 10, 70+j*20);//вывод названия функции
+            g.drawString(String.format("%5d %15.3f %15.3f %15.3f", i, X.get(i), Math.abs(Y1.get(i).doubleValue()), Math.abs(Y2.get(i).doubleValue())), 10, 70 + j * 20);
+//вывод значений
         }
     }
 
